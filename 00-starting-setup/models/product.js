@@ -1,0 +1,39 @@
+const Cart = require('./cart');
+
+const sequelize = require("../util/database");
+const Sequelize = require('sequelize');
+
+
+const Product = sequelize.define('product', {
+
+  id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    autoIncrement: true,
+    primaryKey: true
+  },
+
+  title: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+
+  price: {
+    type: Sequelize.DOUBLE,
+    allowNull: false
+  },
+
+  imageUrl: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+
+  description: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  }
+
+});
+
+
+module.exports = Product;
